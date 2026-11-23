@@ -1,10 +1,6 @@
 import argparse
-import json
 
-
-def load_json_file(filepath):
-    with open(filepath, encoding="utf-8") as file:
-        return json.load(file)
+from gendiff import generate_diff
 
 
 def main():
@@ -25,8 +21,8 @@ def main():
 
     args = parser.parse_args()
 
-    load_json_file(args.first_file)
-    load_json_file(args.second_file)
+    result = generate_diff(args.first_file, args.second_file)
+    print(result)
 
 
 if __name__ == "__main__":
