@@ -1,3 +1,7 @@
+
+[![CI](https://github.com/GeorgeSaf/python-project-50/actions/workflows/ci.yml/badge.svg)](https://github.com/GeorgeSaf/python-project-50/actions/workflows/ci.yml)
+
+
 # Вычислитель отличий (Python)
 
 [![hexlet-check](https://github.com/GeorgeSaf/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/GeorgeSaf/python-project-50/actions)
