@@ -1,9 +1,13 @@
 import json
+from pathlib import Path
+
+from .parser import parse
 
 
-def load_json_file(filepath):
-    with open(filepath, encoding="utf-8") as file:
-        return json.load(file)
+def load_file(filepath):
+    path = Path(filepath)
+    content = path.read_text(encoding="utf-8")
+    return parse(content, path.suffix.lower())
 
 
 def format_value(value):
@@ -14,8 +18,8 @@ def format_value(value):
 
 
 def generate_diff(first_file, second_file):
-    first_data = load_json_file(first_file)
-    second_data = load_json_file(second_file)
+    first_data = load_file(first_file)
+    second_data = load_file(second_file)
 
     all_keys = sorted(first_data.keys() | second_data.keys())
 
